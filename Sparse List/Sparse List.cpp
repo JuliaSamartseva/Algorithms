@@ -87,6 +87,10 @@ struct IndexList {
 		}
 	}
 
+	void addElement(int v) { //19_2
+		pointers[v % 100].insertEnd(v);
+	}
+
 	void deleteElement(int v) {//20_2
 		Node* head = pointers[v % 100].head;
 		Node* temp;

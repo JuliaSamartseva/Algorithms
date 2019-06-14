@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BinarySearchTree", "BinarySearchTree\BinarySearchTree.vcxproj", "{9EBAC6E3-EAE0-4237-AC4E-9EA7F9337E79}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Graph", "Graph\Graph.vcxproj", "{B746EDCA-C1EC-413D-82DF-83652144C750}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DoublyLinkedList", "DoublyLinkedList\DoublyLinkedList.vcxproj", "{6C750D59-46C3-45D5-A472-C4355447C14A}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CircularLinkedList", "CircularLinkedList\CircularLinkedList.vcxproj", "{191BBE92-4BD6-4886-8F50-39A178692B8F}"
@@ -16,6 +14,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkedList", "LinkedList\LinkedList.vcxproj", "{88597AA9-F1E2-4720-8027-CE7DC4843FC3}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sparse List", "Sparse List\Sparse List.vcxproj", "{B99DFF47-B7D5-43D9-B3F3-24D9D7035F73}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Graph Theory", "Graph Theory\Graph Theory.vcxproj", "{A0152925-3CB7-4586-A54C-86E6106DC6DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,14 +33,6 @@ Global
 		{9EBAC6E3-EAE0-4237-AC4E-9EA7F9337E79}.Release|x64.Build.0 = Release|x64
 		{9EBAC6E3-EAE0-4237-AC4E-9EA7F9337E79}.Release|x86.ActiveCfg = Release|Win32
 		{9EBAC6E3-EAE0-4237-AC4E-9EA7F9337E79}.Release|x86.Build.0 = Release|Win32
-		{B746EDCA-C1EC-413D-82DF-83652144C750}.Debug|x64.ActiveCfg = Debug|x64
-		{B746EDCA-C1EC-413D-82DF-83652144C750}.Debug|x64.Build.0 = Debug|x64
-		{B746EDCA-C1EC-413D-82DF-83652144C750}.Debug|x86.ActiveCfg = Debug|Win32
-		{B746EDCA-C1EC-413D-82DF-83652144C750}.Debug|x86.Build.0 = Debug|Win32
-		{B746EDCA-C1EC-413D-82DF-83652144C750}.Release|x64.ActiveCfg = Release|x64
-		{B746EDCA-C1EC-413D-82DF-83652144C750}.Release|x64.Build.0 = Release|x64
-		{B746EDCA-C1EC-413D-82DF-83652144C750}.Release|x86.ActiveCfg = Release|Win32
-		{B746EDCA-C1EC-413D-82DF-83652144C750}.Release|x86.Build.0 = Release|Win32
 		{6C750D59-46C3-45D5-A472-C4355447C14A}.Debug|x64.ActiveCfg = Debug|x64
 		{6C750D59-46C3-45D5-A472-C4355447C14A}.Debug|x64.Build.0 = Debug|x64
 		{6C750D59-46C3-45D5-A472-C4355447C14A}.Debug|x86.ActiveCfg = Debug|Win32
@@ -81,6 +73,14 @@ Global
 		{B99DFF47-B7D5-43D9-B3F3-24D9D7035F73}.Release|x64.Build.0 = Release|x64
 		{B99DFF47-B7D5-43D9-B3F3-24D9D7035F73}.Release|x86.ActiveCfg = Release|Win32
 		{B99DFF47-B7D5-43D9-B3F3-24D9D7035F73}.Release|x86.Build.0 = Release|Win32
+		{A0152925-3CB7-4586-A54C-86E6106DC6DF}.Debug|x64.ActiveCfg = Debug|x64
+		{A0152925-3CB7-4586-A54C-86E6106DC6DF}.Debug|x64.Build.0 = Debug|x64
+		{A0152925-3CB7-4586-A54C-86E6106DC6DF}.Debug|x86.ActiveCfg = Debug|Win32
+		{A0152925-3CB7-4586-A54C-86E6106DC6DF}.Debug|x86.Build.0 = Debug|Win32
+		{A0152925-3CB7-4586-A54C-86E6106DC6DF}.Release|x64.ActiveCfg = Release|x64
+		{A0152925-3CB7-4586-A54C-86E6106DC6DF}.Release|x64.Build.0 = Release|x64
+		{A0152925-3CB7-4586-A54C-86E6106DC6DF}.Release|x86.ActiveCfg = Release|Win32
+		{A0152925-3CB7-4586-A54C-86E6106DC6DF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

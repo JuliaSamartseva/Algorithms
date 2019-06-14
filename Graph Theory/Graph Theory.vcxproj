@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{B746EDCA-C1EC-413D-82DF-83652144C750}</ProjectGuid>
+    <ProjectGuid>{A0152925-3CB7-4586-A54C-86E6106DC6DF}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Graph</RootNamespace>
+    <RootNamespace>GraphTheory</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -151,7 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Graph.cpp" />
+    <ClCompile Include="Graph Theory.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

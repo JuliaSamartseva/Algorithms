@@ -204,7 +204,7 @@ struct BinarySearchTree {
 
 };
 
-void insertInorder_recur(Node* node, BinarySearchTree& result) {
+void insertInorder_recur(Node* node, BinarySearchTree& result) { //2_5
 	if (node == NULL) return;
 	insertInorder_recur(node->left, result);
 	result.insertNode(node->data);

@@ -246,6 +246,22 @@ void printInorder(Node* head, int a) {
 	std::cout << result;
 }
 
+void countLeafNodes_recur(Node* head, int u, int v, int& result) {
+	if (head == NULL) return;
+	if (head->left == NULL && head->right == NULL) {
+		if (head->data <= v && head->data >= u) result++;
+		return;
+	}
+	countLeafNodes_recur(head->left, u, v, result);
+	countLeafNodes_recur(head->right, u, v, result);
+}
+
+int countLeafNodes(Node* head, int u, int v) {
+	int result = 0;
+	countLeafNodes_recur(head, u, v, result);
+	return result;
+}
+
 
 
 

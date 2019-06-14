@@ -2,7 +2,7 @@
 #include <fstream>
 #include <iostream>
 
-enum color {WHITE, GRAY, BLACK};
+enum color { WHITE, GRAY, BLACK };
 
 struct Node {
 	int data;
@@ -19,14 +19,15 @@ struct AdjacencyList {
 	Node** head = NULL;
 	int Vertices = 0;
 
-	AdjacencyList() // read graph from a list of edges
+	AdjacencyList(int number)
 	{
-		std::fstream file;
-		std::string filename;
-		int source, destination, number;
+		Vertices = number;
+		head = new Node *[Vertices];
+		for (int i = 0; i < Vertices; i++) head[i] = NULL;
+	}
 
-		filename = "file3.txt";
-		file.open(filename.c_str());
+	AdjacencyList(std::fstream& file) { // read graph from a list of edges
+		int source, destination, number;
 
 		if (file.is_open()) {
 			int i = 1;
@@ -61,8 +62,8 @@ struct AdjacencyList {
 
 	int LeafNumber() { //56_5, 14_5
 		int result = 0;
-		for (int i = 0; i < Vertices; i++) 
-			if (head[i] != NULL) 
+		for (int i = 0; i < Vertices; i++)
+			if (head[i] != NULL)
 				if (head[i]->next == NULL) result++;
 		return result;
 	}
@@ -123,7 +124,46 @@ struct AdjacencyList {
 		}
 		return result;
 	}
+
+	void print() {
+		Node* x;
+		for (int i = 0; i < Vertices; i++) {
+			std::cout << "\n vertice " << i << " with";
+			x = head[i];
+			while (x != NULL) {
+				std::cout << " " << x->data;
+				x = x->next;
+			}
+		}
+	}
+
+	AdjacencyList findSpanningTree() { //2_4
+		AdjacencyList result = AdjacencyList(Vertices);
+		bool* visited = new bool[Vertices];
+		for (int i = 0; i < Vertices; i++) visited[i] = false;
+		dfsSpanningTree(0, result, visited);
+		return result;
+	}
+
+	void dfsSpanningTree(int v, AdjacencyList & result, bool* visited) { //2_4
+		Node* x = head[v];
+		visited[v] = true;
+		while (x != NULL) {
+			if (visited[x->data] == false) {
+				result.Add(v, x->data);
+				result.Add(x->data, v);
+				dfsSpanningTree(x->data, result, visited);
+			}
+			x = x->next;
+		}
+	}
+
 };
+
+
+
+
+
 
 struct AdjacencyMatrix {
 	int** adjacencyMatrix = NULL;
@@ -205,7 +245,11 @@ struct AdjacencyMatrix {
 
 int main()
 {
-	AdjacencyMatrix x;
-	std::cout << x.isCyclic();
+	//2_4
+	std::fstream file;
+	file.open("file3.txt");
+	AdjacencyList x = AdjacencyList(file);
+	AdjacencyList result = x.findSpanningTree();
+	result.print();
 }
 
