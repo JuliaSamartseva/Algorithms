@@ -119,12 +119,10 @@ void postorderIterative(Node* x) { //11_3
 			head = next;
 		}
 		else {
-			if (next->right != NULL) {
+			if (next->right != NULL) 
 				stack.push(next->right);
-			}
-			if (next->left != NULL) {
+			if (next->left != NULL) 
 				stack.push(next->left);
-			}
 		}
 	}
 }

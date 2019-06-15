@@ -113,6 +113,37 @@ struct IndexList {
 	}
 };
 
+struct IndexMatrix {
+	LinkedList* pointers;
+	int n, m = 0;
+
+	IndexMatrix() { //13_2
+		std::cout << "Dimentions of matrix \n" << " (rows) n = ";
+		std::cin >> n;
+		std::cout << " (columns) m = ";
+		std::cin >> m;
+		int element;
+		pointers = new LinkedList[n];
+
+		for (int i = 0; i < n; i++)
+			for (int j = 0; j < m; j++) {
+				std::cin >> element;
+				if (element != 0) pointers[i].insertEnd(element, j);
+			}
+	}
+
+	int findMax() { //13_2
+		int max = 0;
+		for (int i = 0; i < n; i++) {
+			Node* x = pointers[i].head;
+			while (x != NULL) {
+				if (x->data > max) max = x->data;
+				x = x->next;
+			}
+		}
+		return max;
+	}
+};
 
 int main()
 {
@@ -126,7 +157,7 @@ int main()
 	//LinkedList y = x.toSparseList();
 	//y.printList();
 
-	IndexList x;
-	x.deleteElement(2);
+	IndexMatrix x;
+	std::cout << x.findMax();
 }
 

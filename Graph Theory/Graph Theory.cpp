@@ -14,6 +14,49 @@ struct Node {
 	}
 };
 
+struct Queue {
+	Node* front = NULL;
+	Node* rear = NULL;
+	int size = 0;
+
+	void enqueue(int data) {
+		Node* new_node = new Node(data);
+		if (front == NULL && rear == NULL) {
+			front = new_node;
+			rear = new_node;
+		}
+		else {
+			rear->next = new_node;
+			rear = new_node;
+		}
+		size++;
+	}
+
+	int dequeue() {
+		int result;
+		Node* temp = front;
+		if (front == NULL) return -1;
+		if (front == rear) {
+			result = front->data;
+			front = NULL;
+			rear = NULL;
+		}
+		else {
+			result = front->data;
+			front = front->next;
+		}
+		free(temp);
+		size--;
+		return result;
+	}
+
+	bool isEmpty() {
+		if (front = NULL) return true;
+		else return false;
+	}
+
+};
+
 
 struct AdjacencyList {
 	Node** head = NULL;
@@ -239,6 +282,24 @@ struct AdjacencyMatrix {
 		}
 		return result;
 	}
+
+	void BFS(int startVertice) {
+		Queue queue;
+		bool* visited = new bool[VerticesNumber];
+		visited[startVertice] = true;
+		queue.enqueue(startVertice);
+		int v;
+		while (!queue.isEmpty()) {
+			v = queue.dequeue();
+			for (int i = 0; i < VerticesNumber; i++) {
+				if (adjacencyMatrix[v][i] == 1 && visited[i] == false) {
+					visited[i] = true;
+					queue.enqueue(i);
+				}
+			}
+		}
+	}
+
 };
 
 
