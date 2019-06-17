@@ -77,7 +77,7 @@ struct IndexList {
 	IndexList() { //20_2
 		pointers = new LinkedList[100];
 		int number, element;
-		int index = 0;
+		int index = 0;	
 		std::cout << "How many elements?";
 		std::cin >> number;
 
@@ -109,6 +109,16 @@ struct IndexList {
 				return;
 			} else
 			head = head->next;
+		}
+	}
+
+	void NumberOfKey(int key) { //11_2
+		int number = 0;
+			Node* x = pointers[key % 100].head;
+			while (x != NULL) {
+				if (x->data == key) number++;
+				x = x->next;
+			}
 		}
 	}
 };

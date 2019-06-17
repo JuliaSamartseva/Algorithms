@@ -162,7 +162,7 @@ struct AdjacencyList {
 					count++;
 					x = x->next;
 				}
-				result++;
+				if (count == 3) result++;
 			}
 		}
 		return result;
